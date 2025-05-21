@@ -1,26 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import FileUploadCard from "~/components/FileUploadCard";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "~/components/ui/card";
-import { DaimoPayButton } from "@daimo/pay";
-import { Label } from "~/components/ui/label";
 import { useFrameSDK } from "~/hooks/useFrameSDK";
-import { baseUSDC } from "@daimo/contract";
-import { getAddress } from "viem";
-import BucketExplorer from "./BucketExplorer";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "~/components/ui/card";
+import PopQuiz from "~/components/PopQuiz";
 
 function ExampleCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Welcome to the vibes.engineering template</CardTitle>
+        <CardTitle>Welcome to Leyline Pop Quiz</CardTitle>
         <CardDescription>
           This is an example card that you can customize or remove
         </CardDescription>
@@ -85,9 +73,7 @@ export default function MiniApp() {
   return (
     <div className="w-[400px] mx-auto py-2 px-2 space-y-4">
       <ExampleCard />
-      <PaymentComponent />
-      <FileUploadCard />
-      <BucketExplorer />
+      <PopQuiz />
     </div>
   );
 }
