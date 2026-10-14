@@ -56,9 +56,8 @@ export async function POST(request: Request) {
 
     const txHashValue = await walletClient.writeContract({
       abi: erc20Abi,
-      address: baseUSDC.token,
+      address: baseUSDC.token as `0x${string}`,
       functionName: "transfer",
-      // @ts-ignore - Suppressing persistent TS/linter issue with viem's 0x${string} type in the args array
       args: [validatedToAddress, amount],
     });
 
